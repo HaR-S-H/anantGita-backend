@@ -16,12 +16,12 @@ const getChapter = asyncHandler(async (req, res) => {
     if (cacheData) {
         // console.log(cacheData);
         const chapter = JSON.parse(cacheData);
-        console.log(chapter);
+        // console.log(chapter);
         
         return res.status(200).json(new ApiResponse(200,  {chapter}  , "Chapter fetched from cache"));
     }
 
-    console.log("hello");
+    // console.log("hello");
     
     const chapter = await Chapter.findOne({ number: req.params.id }).populate("verses");   
     await client.set(`chapter:${req.params.id}`, JSON.stringify(chapter)); 
