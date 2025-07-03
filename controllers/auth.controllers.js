@@ -103,7 +103,7 @@ const logInUser = asyncHandler(async (req, res) => {
    const cookieOptions = {
       httpOnly: true,
   secure: true,
-  sameSite: 'strict', // 'strict' or 'lax' based on your requirements
+  sameSite: 'none', // 'strict' or 'lax' based on your requirements
         maxAge: 7 * 24 * 60 * 60 * 1000 // 7 days
     };
 
